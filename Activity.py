@@ -31,3 +31,8 @@ def activity_selection(activities, starts, ends):
             # keep updating our blocked off time as new activities are added
             blocked_time = ends[i]
     return res
+
+if __name__ == "__main__":
+    result = activity_selection(["Play Golf", "Paint", "Cook", "Sleep", "Jog", "Code", "Eat"], [1, 3, 1, 3, 4, 6, 8],
+                                [3, 4, 4, 6, 6, 9, 9])
+    print(result)
