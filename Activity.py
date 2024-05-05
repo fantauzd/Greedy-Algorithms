@@ -21,6 +21,11 @@ def activity_selection(activities, starts, ends):
     :param ends: a list of end times
     :return: a list with the maximum salection of activites
     """
-    result = []
+    res = []
+    # initialize a variable to track time that is already taken
     blocked_time = 0
     for i in range(len(activities)):
+        if starts[i] >= blocked_time:
+            res.append(activities[i])
+            blocked_time = ends[i]
+    return res
