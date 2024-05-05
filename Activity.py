@@ -24,8 +24,10 @@ def activity_selection(activities, starts, ends):
     res = []
     # initialize a variable to track time that is already taken
     blocked_time = 0
+    # loop over each activity and select the activity with the shortest end time that does not overlap
     for i in range(len(activities)):
         if starts[i] >= blocked_time:
             res.append(activities[i])
+            # keep updating our blocked off time as new activities are added
             blocked_time = ends[i]
     return res
