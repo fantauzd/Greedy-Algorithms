@@ -38,3 +38,7 @@ def feedDog(hunger_level, biscuit_size):
             dog += 1
             result += 1
 
+    return result
+
+if __name__ == "__main__":
+    print(feedDog([1,2,3], [1,1]))
