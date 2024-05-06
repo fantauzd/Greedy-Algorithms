@@ -12,9 +12,9 @@
 # You cannot give same biscuit to two dogs.
 # Each dog can get only one biscuit.
 
-def feedDog1(hunger_level, biscuit_size):
+def feedDogMultipleBiscuits(hunger_level, biscuit_size):
     """
-    Solves the feed dog problem and returns the number of dogs that are satisified.
+    Solves the feed dog problem  where one dog can receive many biscuits.
     :param hunger_level: an array where each index represents the hunger level of a dog
     :param biscuit_size: an array where each index represents the size of a biscuit
     :return: int, number of dogs that are satisfied
@@ -38,8 +38,7 @@ def feedDog1(hunger_level, biscuit_size):
         # if the dog was satisfied then count it
         if hunger_level[dog] <= 0:
             result += 1
-        # we can only give the dog one biscuit, so move to next dog
-        dog += 1
+            dog += 1
 
     return result
 
@@ -50,17 +49,21 @@ def feedDog(hunger_level, biscuit_size):
     :param biscuit_size: an array where each index represents the size of a biscuit
     :return: int, number of dogs that are satisfied
     """
-
+    # sort the input arrays in ascending order
     hunger_level.sort()
     biscuit_size.sort()
+    # use pointers for current dog and biscuit
     dog = 0
     biscuit = 0
     result = 0
+    # starting with the smallest dog and biscuit, continue satisfying dogs until we run out of dogs or biscuits
     while dog < len(hunger_level) and biscuit < len(biscuit_size):
+        # if a biscuit will satisfy a dog, use it
         if hunger_level[dog] <= biscuit_size[biscuit]:
             result += 1
             dog += 1
             biscuit += 1
+        # otherwise look at larger biscuit
         else:
             biscuit += 1
 
