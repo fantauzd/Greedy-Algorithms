@@ -32,7 +32,7 @@ def feedDog(hunger_level, biscuit_size):
             j -= 1
         # feed the biscuit to the dog
         hunger_level[dog] -= biscuit_size[j]
-        biscuit_size.remove(biscuit_size[j])
+        biscuit_size.remove(biscuit_size[j])    #O(n) time complexity
         # if the dog was satisfied move to next dog
         if hunger_level[dog] <= 0:
             dog += 1
