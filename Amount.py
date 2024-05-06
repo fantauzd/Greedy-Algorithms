@@ -26,7 +26,7 @@ def amount_helper(A, S, pointer, combo, result):
         # we have already used first duplicate in combo
         if i > pointer:
             continue
-
+    # add number to combo, lessen the remaining sum to be found, increment pointer to look at new number
     amount_helper(A, S - A[i], i + 1, combo + [A[i]], result)
 
 if __name__ == "__main__":
