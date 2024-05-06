@@ -41,4 +41,4 @@ def feedDog(hunger_level, biscuit_size):
     return result
 
 if __name__ == "__main__":
-    print(feedDog([1,2,3], [1,1]))
+    print(feedDog([4,3, 6], [4,4, 1, 2, 1, 1]))
