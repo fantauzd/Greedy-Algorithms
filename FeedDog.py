@@ -1,6 +1,6 @@
 # Dominic Fantauzzo
 
-# You are a pet store owner and you own few dogs. Each dog has a specific hunger level given
+# You are a pet store owner, and you own few dogs. Each dog has a specific hunger level given
 # by array hunger_level [1..n] (ith dog has hunger level of hunger_level [i]). You have couple of
 # dog biscuits of size given by biscuit_size [1…m]. Your goal to satisfy maximum number of
 # hungry dogs. You need to find the number of dogs we can satisfy.
@@ -12,7 +12,7 @@
 # You cannot give same biscuit to two dogs.
 # Each dog can get only one biscuit.
 
-def feedDog(hunger_level, biscuit_size):
+def feedDog1(hunger_level, biscuit_size):
     """
     Solves the feed dog problem and returns the number of dogs that are satisified.
     :param hunger_level: an array where each index represents the hunger level of a dog
@@ -40,6 +40,29 @@ def feedDog(hunger_level, biscuit_size):
             result += 1
         # we can only give the dog one biscuit, so move to next dog
         dog += 1
+
+    return result
+
+def feedDog(hunger_level, biscuit_size):
+    """
+    Solves the feed dog problem and returns the number of dogs that are satisified.
+    :param hunger_level: an array where each index represents the hunger level of a dog
+    :param biscuit_size: an array where each index represents the size of a biscuit
+    :return: int, number of dogs that are satisfied
+    """
+
+    hunger_level.sort()
+    biscuit_size.sort()
+    dog = 0
+    biscuit = 0
+    result = 0
+    while dog < len(hunger_level) and biscuit < len(biscuit_size):
+        if hunger_level[dog] <= biscuit_size[biscuit]:
+            result += 1
+            dog += 1
+            biscuit += 1
+        else:
+            biscuit += 1
 
     return result
 
