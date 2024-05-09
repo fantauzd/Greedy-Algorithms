@@ -18,3 +18,11 @@ def minLateness(Name, TimeTaken, Deadline):
     :param Deadline: an array of the deadline day for corresponding assignments
     :return:
     """
+    # sort all three arrays on deadline ASC
+
+    start_time = 0
+    max_late = 0
+    schedule = []
+    finish_time = 0
+
+    for i in range(len(Name)):
