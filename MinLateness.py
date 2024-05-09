@@ -10,3 +10,11 @@
 #
 # If assignments = [A, B, C, D]; timetaken=[1, 2, 3, 4] and deadline=[2,4,5,7].
 
+def minLateness(Name, TimeTaken, Deadline):
+    """
+    Solve the lateness problem and find the minimum acheivable late days for the given assignments.
+    :param Name: an array of assignments
+    :param TimeTaken: an array of the days needed to complete corresponding assignments
+    :param Deadline: an array of the deadline day for corresponding assignments
+    :return:
+    """
