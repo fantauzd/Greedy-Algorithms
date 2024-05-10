@@ -37,3 +37,7 @@ def minLateness(assignments):
         schedule.append(assignment[0])
 
     return max_late, schedule
+
+if __name__ == "__main__":
+    assinnments = [("A", 2, 2), ("B", 3, 4), ("C", 1, 6), ("D", 5, 7)]  # [(S.no, timetaken, deadline)]
+    print(min_Lateness(assinnments))
